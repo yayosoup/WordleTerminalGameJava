@@ -1,14 +1,13 @@
-import java.util.Random;
-
-import static model.WordleChooser.RandomWordle;
-import static view.IntroducePlayer.Welcome;
+import controller.WordleController;
+import model.WordleModel;
+import view.WordleView;
 
 public class Main {
     public static void main(String[] args) {
-        // Welcomes the player and explains the game.
-        Welcome();
+        WordleModel model = new WordleModel();
+        WordleView view = new WordleView();
+        WordleController controller = new WordleController(model, view);
 
-        RandomWordle();
-
+        controller.startGame();
     }
 }
